@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="result">
+    <h2>Prediction Result</h2>
+    <p><b>Disease:</b> <span id="disease"></span></p>
+    <p><b>Risk Level:</b> <span id="risk"></span></p>
+    <p><b>Probability:</b> <span id="probability"></span></p>
+</div>
+
+<script>
+document.getElementById("disease").innerText = localStorage.getItem("disease");
+document.getElementById("risk").innerText = localStorage.getItem("risk");
+document.getElementById("probability").innerText = localStorage.getItem("probability");
+</script>
+
+</body>
+</html>
+
+

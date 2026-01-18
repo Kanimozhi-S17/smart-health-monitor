@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Risk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="container">
+        <h2>🧠 Disease Risk Prediction</h2>
+        <p>AI-powered health assessment</p>
+
+        <!-- ❌ removed action -->
+        <form onsubmit="predictRisk(); return false;">
+            <input type="number" id="age" placeholder="Age" required>
+            <input type="number" id="bmi" placeholder="BMI" required>
+            <input type="number" id="glucose" placeholder="Glucose Level" required>
+            <input type="number" id="bp" placeholder="Blood Pressure" required>
+
+            <button type="submit">Predict Risk</button>
+        </form>
+
+        <!-- result shown here -->
+        <div id="result" style="margin-top:20px;"></div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

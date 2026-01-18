@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Disease Risk Prediction Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- HEALTH SCORE -->
+    <div class="health-score glass">
+        <h2>🟢 Health Score</h2>
+        <h1>78 / 100</h1>
+        <p class="status good">Status: Good</p>
+    </div>
+
+    <!-- MAIN ACTIONS -->
+   <div class="grid-3">
+    <a href="predict.html" class="card glass">Predict Disease Risk</a>
+    <a href="history.html" class="card glass">View History</a>
+    <a href="tips.html" class="card glass">Health Tips</a>
+</div>
+
+
+
+    <!-- HEALTH TRENDS -->
+    <h2 class="section-title">Health Trends</h2>
+
+ <div class="grid-3">
+    <div class="card glass" onclick="openTrend('heart')">📈 Heart Rate Trend</div>
+    <div class="card glass" onclick="openTrend('sugar')">📉 Sugar Level Trend</div>
+    <div class="card glass" onclick="openTrend('bp')">📊 Blood Pressure Trend</div>
+</div>
+
+
+
+    <!-- AI RESULT -->
+    <div class="ai-result glass">
+        <h2>🤖 AI Prediction</h2>
+        <p>You have <strong>Low Risk</strong> of heart disease</p>
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

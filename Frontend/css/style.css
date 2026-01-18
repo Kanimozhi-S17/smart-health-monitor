@@ -1,0 +1,564 @@
+/* ---------- Global Reset ---------- */
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: #020617;
+    color: #E5E7EB;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+    height: 65vh;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(56,189,248,0.85),
+            rgba(99,102,241,0.85)
+        ),
+        url("https://images.unsplash.com/photo-1581091012184-5c7c8e7b98da");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(2,6,23,0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: #E5E7EB;
+    animation: fadeInUp 1s ease-in-out;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+/* ---------- Primary Button ---------- */
+.btn {
+    background: #38BDF8;
+    color: #020617;
+    padding: 16px 36px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    box-shadow: 0 8px 25px rgba(56,189,248,0.5);
+    display: inline-block;
+    animation: pulseGlow 2s infinite alternate;
+}
+
+.btn:hover {
+    background: #22C55E;
+    color: #FFFFFF;
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 15px 30px rgba(34,197,94,0.6);
+    animation: none;
+}
+
+/* ---------- Glow Animation ---------- */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 8px 25px rgba(56,189,248,0.5);
+    }
+    100% {
+        box-shadow: 0 12px 35px rgba(56,189,248,0.7);
+    }
+}
+
+/* ---------- Features ---------- */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 70px 20px;
+    flex-wrap: wrap;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: #0F172A;
+    width: 270px;
+    padding: 28px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border-top: 5px solid #38BDF8;
+}
+
+.card img {
+    width: 64px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    color: #6366F1;
+}
+
+.card p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 18px;
+    background: #020617;
+    color: #22C55E;
+    font-size: 14px;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Login Page ---------- */
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+        circle at top,
+        rgba(56,189,248,0.15),
+        #020617 60%
+    );
+}
+
+.container {
+    background: #0F172A;
+    width: 320px;
+    padding: 35px 30px;
+    border-radius: 18px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    text-align: center;
+    animation: fadeInUp 0.8s ease;
+}
+
+.container h2 {
+    margin-bottom: 25px;
+    color: #38BDF8;
+}
+
+.container input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #020617;
+    color: #E5E7EB;
+}
+
+.container button {
+    width: 100%;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #38BDF8, #6366F1);
+    color: #020617;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.glass {
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+    border: 1px solid rgba(56,189,248,0.25);
+}
+
+.health-score h1 {
+    font-size: 42px;
+    color: #22C55E;
+}
+
+.status.good {
+    color: #22C55E;
+    font-weight: 600;
+}
+
+.section-title {
+    margin: 40px 0 24px;
+    font-size: 22px;
+    color: #38BDF8;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ---------- DASHBOARD CARD GLOW (ADDED) ---------- */
+
+.dashboard .card {
+    width: 100%;
+    color: #E5E7EB;
+    font-weight: 600;
+    cursor: pointer;
+    animation: pulseGlowCard 2.5s infinite alternate;
+}
+
+/* Hover Glow */
+.dashboard .card:hover {
+    box-shadow:
+        0 0 35px 8px rgba(56,189,248,0.9),
+        0 15px 50px rgba(56,189,248,0.6);
+    transform: translateY(-6px);
+    animation: none;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlowCard {
+    0% {
+        box-shadow:
+            0 0 8px rgba(56,189,248,0.3),
+            0 5px 15px rgba(56,189,248,0.2);
+    }
+    50% {
+        box-shadow:
+            0 0 16px rgba(56,189,248,0.5),
+            0 10px 30px rgba(56,189,248,0.35);
+    }
+    100% {
+        box-shadow:
+            0 0 8px rgba(56,189,248,0.3),
+            0 5px 15px rgba(56,189,248,0.2);
+    }
+}
+
+.ai-result strong {
+    color: #22C55E;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 30px;
+    }
+    .card {
+        width: 90%;
+    }
+}
+/* ================= PREDICT PAGE CENTER FIX ================= */
+
+body.predict-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+        circle at center,
+        rgba(56,189,248,0.12),
+        #020617 65%
+    );
+}
+
+/* Glow + perfect center only for predict page */
+body.predict-page .container {
+    box-shadow:
+        0 0 40px rgba(56,189,248,0.55),
+        0 0 80px rgba(99,102,241,0.35),
+        0 30px 80px rgba(0,0,0,0.7);
+}
+/* ================= PREDICT PAGE HARD CENTER FIX ================= */
+
+.predict-wrapper {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+        circle at center,
+        rgba(56,189,248,0.12),
+        #020617 70%
+    );
+}
+
+/* Strong glow only for predict page */
+.predict-wrapper .container {
+    box-shadow:
+        0 0 45px rgba(56,189,248,0.6),
+        0 0 90px rgba(99,102,241,0.4),
+        0 35px 90px rgba(0,0,0,0.75);
+}
+/* ================================
+   PREDICT PAGE FIX (SAFE)
+   ================================ */
+
+.predict-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(circle at top, #020617, #000);
+}
+
+.predict-card {
+    width: 360px;
+    padding: 30px;
+    border-radius: 18px;
+
+    background: rgba(15, 23, 42, 0.85);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.35);
+
+    text-align: center;
+}
+
+.predict-card h2 {
+    color: #38BDF8;
+    margin-bottom: 8px;
+}
+
+.predict-card .subtitle {
+    color: #CBD5E1;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.predict-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #020617;
+    color: #E5E7EB;
+}
+
+.predict-card input::placeholder {
+    color: #9CA3AF;
+}
+
+.predict-card button {
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(90deg, #38BDF8, #6366F1);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.predict-card button:hover {
+    transform: scale(1.03);
+}
+/* =================================
+   FORCE RESET FOR PREDICT PAGE ONLY
+   ================================= */
+
+body.predict-body {
+    display: block !important;
+    margin: 0;
+}
+
+/* Center the predict card */
+.predict-page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(circle at top, #020617, #000);
+}
+
+/* Card */
+.predict-card {
+    width: 360px;
+    padding: 30px;
+    border-radius: 18px;
+
+    background: rgba(15, 23, 42, 0.9);
+    box-shadow: 0 0 35px rgba(56, 189, 248, 0.45);
+
+    text-align: center;
+}
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.history-table th,
+.history-table td {
+    padding: 12px;
+    border-bottom: 1px solid #1f2933;
+    text-align: center;
+}
+
+.history-table th {
+    color: #38bdf8;
+}
+.center-wrapper {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back-btn {
+    position: relative;
+    display: inline-block;
+    padding: 16px 34px;
+    border-radius: 16px;
+    background: #020617;
+    color: #00eaff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* 🔵 Neon Ring */
+.back-btn::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 18px;
+    background: conic-gradient(
+        from 0deg,
+        #00eaff,
+        #0072ff,
+        #00ffd5,
+        #00eaff
+    );
+    filter: blur(8px);
+    animation: neonRotate 3s linear infinite;
+    z-index: -1;
+}
+
+/* 🔲 Inner dark layer */
+.back-btn::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 14px;
+    background: #020617;
+    z-index: -1;
+}
+
+/* Hover boost */
+.back-btn:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes neonRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

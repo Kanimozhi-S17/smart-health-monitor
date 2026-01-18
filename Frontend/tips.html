@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Health Tips</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="dashboard">
+
+<h2 class="section-title">💡 Personalized Health Tips</h2>
+
+<body>
+
+   
+
+    <div class="center-wrapper">
+        <div class="card glass">
+            <!-- EXISTING CONTENT EXACT-AA ITHULA VEI -->
+            
+            <h3>⚠️ High Risk – Take Action Now</h3>
+            <ul>
+                <li>✅ Avoid smoking and alcohol</li>
+                <li>✅ Exercise daily</li>
+                <li>✅ Reduce salt & sugar</li>
+            </ul>
+
+            <p><i>"Small daily improvements lead to big health benefits."</i></p>
+        </div>
+    </div>
+
+    <a href="dashboard.html">← Back to Dashboard</a>
+
+</body>
+
+
+</div>
+
+<script>
+const riskLevel = "HIGH"; // later backend-la irundhu varum
+
+const tips = {
+    HIGH: [
+        "Exercise at least 30 minutes daily",
+        "Reduce salt and sugar intake",
+        "Avoid smoking and alcohol",
+        "Monitor blood pressure regularly",
+        "Get 7–8 hours of sleep"
+    ],
+    LOW: [
+        "Maintain active lifestyle",
+        "Drink enough water",
+        "Eat fruits and vegetables",
+        "Regular health checkups",
+        "Manage stress effectively"
+    ]
+};
+
+const list = document.getElementById("tipsList");
+document.getElementById("riskText").innerText = 
+    riskLevel==="HIGH" ? "⚠ High Risk – Take Action Now" : "✅ Low Risk – Maintain Healthy Habits";
+
+let i=0;
+setInterval(()=>{
+    list.innerHTML = "";
+    list.innerHTML += `<li>✅ ${tips[riskLevel][i]}</li>`;
+    i = (i+1) % tips[riskLevel].length;
+},2000);
+</script>
+
+</body>
+</html>
+

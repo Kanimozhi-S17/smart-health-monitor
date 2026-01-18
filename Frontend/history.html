@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prediction History</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="dashboard">
+
+<h2 class="section-title">📜 Prediction History</h2>
+
+<div class="card glass">
+    <div style="display:flex; justify-content:space-between; margin-bottom:15px;">
+        <div>Total Predictions: <b id="totalCount">0</b></div>
+        <div>High Risk: <b id="highCount">0</b> | Low Risk: <b id="lowCount">0</b></div>
+    </div>
+
+    <select onchange="filterRisk(this.value)" class="input">
+        <option value="ALL">All Risks</option>
+        <option value="HIGH">High Risk</option>
+        <option value="LOW">Low Risk</option>
+    </select>
+
+    <table class="history-table" style="margin-top:15px;">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Risk</th>
+                <th>Probability</th>
+            </tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+    </table>
+</div>
+
+<a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+
+
+</div>
+
+<script>
+const historyData = [
+    {date:"2026-01-05", risk:"HIGH", prob:78},
+    {date:"2026-01-10", risk:"LOW", prob:12},
+    {date:"2026-01-14", risk:"HIGH", prob:66},
+    {date:"2026-01-18", risk:"LOW", prob:20}
+];
+
+function loadHistory(data){
+    const tbody = document.getElementById("historyBody");
+    tbody.innerHTML="";
+    data.forEach(d=>{
+        const color = d.risk==="HIGH" ? "#ff4d4d" : "#00c896";
+        tbody.innerHTML += `
+        <tr>
+            <td>${d.date}</td>
+            <td style="color:${color}; font-weight:bold">${d.risk}</td>
+            <td>${d.prob}%</td>
+        </tr>`;
+    });
+
+    document.getElementById("totalCount").innerText = historyData.length;
+    document.getElementById("highCount").innerText = historyData.filter(d=>d.risk==="HIGH").length;
+    document.getElementById("lowCount").innerText = historyData.filter(d=>d.risk==="LOW").length;
+}
+
+function filterRisk(risk){
+    if(risk==="ALL") loadHistory(historyData);
+    else loadHistory(historyData.filter(d=>d.risk===risk));
+}
+
+loadHistory(historyData);
+</script>
+
+</body>
+</html>
+

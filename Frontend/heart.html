@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Rate Trend</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h2 class="section-title">❤️ Heart Rate Trend</h2>
+
+<canvas id="heartChart" style="max-width:600px;margin:auto;"></canvas>
+
+<div class="center-wrapper">
+    <a href="index.html" class="back-btn">⬅ Back to Dashboard</a>
+</div>
+
+<script>
+new Chart(document.getElementById("heartChart"), {
+    type: "line",
+    data: {
+        labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+        datasets: [{
+            label: "BPM",
+            data: [72,75,70,78,76,74,73],
+            borderColor: "#00eaff",
+            tension: 0.4
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sugar Level Trend</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h2 class="section-title">🩸 Sugar Level Trend (mg/dL)</h2>
+
+<canvas id="sugarChart" style="max-width:600px;margin:auto;"></canvas>
+
+<div class="center-wrapper">
+    <a href="index.html" class="back-btn">⬅ Back to Dashboard</a>
+</div>
+
+<script>
+new Chart(document.getElementById("sugarChart"), {
+    type: "line",
+    data: {
+        labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+        datasets: [{
+            label: "Sugar Level",
+            data: [110, 115, 108, 120, 118, 112, 109],
+            borderColor: "#f43f5e",
+            backgroundColor: "rgba(244,63,94,0.15)",
+            fill: true,
+            tension: 0.4
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: false
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>

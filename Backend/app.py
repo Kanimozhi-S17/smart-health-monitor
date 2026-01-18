@@ -8,7 +8,7 @@ CORS(app)
 
 model = joblib.load("disease_model.pkl")
 
-# ------------------ PREDICT API ------------------
+
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.json
@@ -38,7 +38,7 @@ def predict():
     })
 
 
-# ------------------ LOGIN API ------------------
+
 @app.route("/login", methods=["POST"])
 def login():
     data = request.json
@@ -86,7 +86,7 @@ def trends(type):
     return jsonify(demo_data.get(type, []))
 
 
-@app.route("/")
+@app.route("/") #routing
 def home():
     return "AI Disease Prediction Backend Running"
 
